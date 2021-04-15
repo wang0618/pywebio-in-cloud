@@ -1,4 +1,2 @@
-runtime: python
-runtime_config:
-  python_version: 3
-entrypoint: python app.py --port=$PORT
+runtime: python39
+entrypoint: python3 app.py --port=$PORT
