@@ -1,4 +1,3 @@
-from pywebio import start_server
 from pywebio.input import *
 from pywebio.output import *
 
