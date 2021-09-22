@@ -1,2 +1,2 @@
 runtime: python39
-entrypoint: python3 app.py --port=$PORT
+entrypoint: python3 app.py --port=$PORT --http
