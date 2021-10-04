@@ -68,6 +68,8 @@ web: python app.py --port=$PORT
 ```
 The `Procfile` file specifics how to start your app. You need replace `app.py` with your start script, and your app should listen on the port specified by the `PORT` environment variable.
 
+Note: Heroku does support websocket, but it will [close idle connections](https://devcenter.heroku.com/articles/websockets#timeouts) (i.e., if no data is sent in 55 seconds then the connection is terminated). You need to provide `websocket_ping_interval` parameter in `start_server()` (e.g., `start_server(main, port=8080, websocket_ping_interval=30)`) to prevent the connection from idling by sending ping packet periodically over the connection.
+
 ### Create Heroku project
 
 https://dashboard.heroku.com/new-app
